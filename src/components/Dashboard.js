@@ -50,11 +50,6 @@ class Dashboard extends Component {
     };
 
     
-    // const panels = data.map(panel => {
-    //   if (!this.state.focused || this.state.focused === panel.id) {
-    //     return <Panel key={panel.id} id={panel.id} label={panel.label} value={panel.value} />
-    //   }
-    // });
     const panels = (this.state.focused ? 
       data.filter(panel => this.state.focused === panel.id) : data)
       .map(panel => (
