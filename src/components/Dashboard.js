@@ -34,9 +34,9 @@ class Dashboard extends Component {
   };
 
   selectPanel(id) {
-    this.setState({
-     focused: id
-    });
+    this.setState(prevState => ({
+      focused: prevState.focused ? null : id
+    }));
   };
 
   
@@ -63,7 +63,7 @@ class Dashboard extends Component {
           id={panel.id}
           label={panel.label}
           value={panel.value}
-          onSelect={this.selectPanel}
+          onSelect={event => this.selectPanel(panel.id)}
         />
     ));
 
